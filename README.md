@@ -21,6 +21,12 @@ A basic Point-of-Sale (POS) website created using CodeIgniter 4 and MySQL.
 - Display-ready 200x200 avatar thumbnails
 - Placeholder avatar for users without an uploaded image
 - MySQL database using CodeIgniter Models and Query Builder
+- Staff login authentication
+- Hashed password verification
+- Session-based login state
+- Protected Customer and User pages
+- CodeIgniter authentication Filter
+- Logout functionality
 
 ## Routes
 
@@ -121,6 +127,30 @@ Only the generated filename is stored in the database.
 Users without an uploaded avatar use:
 
 `public/placeholder.png`
+
+## Authentication
+
+Customer and User management pages require authentication.
+
+Passwords are stored as hashes in the database and verified during login.
+
+The application uses CodeIgniter sessions to maintain the user's login state and an authentication Filter to protect Customer and User routes.
+
+### Login
+
+Open:
+
+`/login`
+
+After successful authentication, the user is redirected to the Customer Accounts page.
+
+### Logout
+
+Open:
+
+`/logout`
+
+Logging out destroys the current session and redirects the user to the login page.
 
 ## Data
 
