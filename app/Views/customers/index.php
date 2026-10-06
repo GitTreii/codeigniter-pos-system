@@ -10,6 +10,7 @@
         <a href="/about">About</a> |
         <a href="/customers">Customer Accounts</a> |
         <a href="/users">User Accounts</a>
+        <a href="/logout">Logout</a>
     </nav>
 
     <h1>Customer Accounts</h1>
