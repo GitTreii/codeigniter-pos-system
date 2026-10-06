@@ -8,17 +8,30 @@ A basic Point-of-Sale (POS) website created using CodeIgniter 4 and MySQL.
 - About Page
 - Customer Accounts
 - User Accounts
-- MySQL database for customer and user records
-- CodeIgniter Models
-- Query Builder using `findAll()`
-- Navigation between all pages
+- Add new customer records
+- Add new user records
+- Edit and update customer records
+- Edit and update user records
+- Form validation
+- Preserved form values after validation errors
+- Unique username validation
+- User avatar upload
+- JPG/JPEG/PNG validation
+- Maximum 2MB avatar file size
+- Display-ready 200x200 avatar thumbnails
+- Placeholder avatar for users without an uploaded image
+- MySQL database using CodeIgniter Models and Query Builder
 
 ## Routes
 
 - `/` - Home
 - `/about` - About
 - `/customers` - Customer Accounts
+- `/customers/new` - New Customer
+- `/customers/edit/{id}` - Edit Customer
 - `/users` - User Accounts
+- `/users/new` - New User
+- `/users/edit/{id}` - Edit User
 
 ## Requirements
 
@@ -38,6 +51,8 @@ Tables:
 
 - `customers`
 - `users`
+
+The `users` table includes an `avatar` column for storing the uploaded image filename.
 
 The database export is included in the project as:
 
@@ -67,7 +82,7 @@ The database export is included in the project as:
 
    `pos_system.sql`
 
-8. Create/configure the `.env` file with:
+8. Configure the `.env` file with your local database settings:
 
    `database.default.hostname = localhost`
 
@@ -93,6 +108,20 @@ The database export is included in the project as:
 
    `http://localhost:8080/`
 
+## Avatar Upload
+
+User profile pictures must be JPG, JPEG, or PNG files no larger than 2MB.
+
+Uploaded images are prepared as 200x200 thumbnails and stored in:
+
+`public/uploads/`
+
+Only the generated filename is stored in the database.
+
+Users without an uploaded avatar use:
+
+`public/placeholder.png`
+
 ## Data
 
-Customer and user records are stored in a MySQL database and retrieved through CodeIgniter Models using Query Builder.
+Customer and user records are stored in MySQL and retrieved through CodeIgniter Models using Query Builder.
