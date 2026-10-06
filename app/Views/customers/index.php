@@ -21,6 +21,7 @@
             <th>Full Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>Action</th>
         </tr>
 
         <?php foreach ($customers as $customer): ?>
@@ -28,6 +29,7 @@
                 <td><?= esc($customer['full_name']) ?></td>
                 <td><?= esc($customer['email']) ?></td>
                 <td><?= esc($customer['phone']) ?></td>
+                <td><a href="/customers/edit/<?= $customer['id'] ?>">Edit</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
