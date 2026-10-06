@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2026 at 08:58 AM
+-- Generation Time: Oct 06, 2026 at 11:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -56,6 +56,7 @@ INSERT INTO `customers` (`id`, `full_name`, `email`, `phone`, `created_at`) VALU
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `full_name` varchar(100) NOT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL
@@ -65,13 +66,13 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `full_name`, `avatar`, `created_at`) VALUES
-(1, 'professor_x', 'Charles Xavier', '1791269367_00c75e3ff94e0bb70486.jpg', '2026-10-04 18:39:48'),
-(2, 'cyclops', 'Scott Summers', NULL, '2026-10-04 18:39:48'),
-(3, 'storm', 'Ororo Munroe', NULL, '2026-10-04 18:39:48'),
-(4, 'wolverine', 'Logan Howlett', NULL, '2026-10-04 18:39:48'),
-(5, 'nightcrawler', 'Kurt Wagner', NULL, '2026-10-04 18:39:48'),
-(6, 'gambit', 'Remy LeBeau', NULL, '2026-10-06 06:24:13');
+INSERT INTO `users` (`id`, `username`, `password`, `full_name`, `avatar`, `created_at`) VALUES
+(1, 'professor_x', '$2y$10$n6RgzhmiY0qwzSZ527N6.eDXk9RZWZey1wbWUo7pn0WMmIjau8y0W', 'Charles Xavier', '1791269367_00c75e3ff94e0bb70486.jpg', '2026-10-04 18:39:48'),
+(2, 'cyclops', '$2y$10$n6RgzhmiY0qwzSZ527N6.eDXk9RZWZey1wbWUo7pn0WMmIjau8y0W', 'Scott Summers', NULL, '2026-10-04 18:39:48'),
+(3, 'storm', '$2y$10$n6RgzhmiY0qwzSZ527N6.eDXk9RZWZey1wbWUo7pn0WMmIjau8y0W', 'Ororo Munroe', NULL, '2026-10-04 18:39:48'),
+(4, 'wolverine', '$2y$10$n6RgzhmiY0qwzSZ527N6.eDXk9RZWZey1wbWUo7pn0WMmIjau8y0W', 'Logan Howlett', NULL, '2026-10-04 18:39:48'),
+(5, 'nightcrawler', '$2y$10$n6RgzhmiY0qwzSZ527N6.eDXk9RZWZey1wbWUo7pn0WMmIjau8y0W', 'Kurt Wagner', NULL, '2026-10-04 18:39:48'),
+(6, 'gambit', '$2y$10$n6RgzhmiY0qwzSZ527N6.eDXk9RZWZey1wbWUo7pn0WMmIjau8y0W', 'Remy LeBeau', NULL, '2026-10-06 06:24:13');
 
 --
 -- Indexes for dumped tables
